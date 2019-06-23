@@ -148,13 +148,7 @@ export const gitCommitPush = (options: GitCommitPushOptions) => {
     if (!token) {
         throw new Error(`token is not defined`);
     }
-    const gitHub = new GitHubApi();
-    if (token) {
-        gitHub.authenticate({
-            type: "oauth",
-            token: token
-        });
-    }
+    const gitHub = new GitHubApi({auth: token});
     const filledOptions = {
         owner: options.owner,
         repo: options.repo,
