@@ -22,7 +22,7 @@
     "postcommit": "git reset",
     "build": "cross-env NODE_ENV=production tsc -p .",
     "watch": "tsc -p . --watch",
-    "prepublish": "npm run --if-present build"
+    "prepare": "npm run --if-present build"
   },
   "keywords": [
     "git",
